@@ -1,0 +1,66 @@
+eval "$(starship init zsh)"
+export EDITOR="vim"
+export SUDO_EDITOR="$EDITOR"
+export PGHOST="/var/run/postgresql"
+
+# set Starship PATH
+export STARSHIP_CONFIG=$HOME/.config/starship.toml
+
+export PATH=$PATH:/usr/local/go/bin
+
+HISTFILE=~/.history
+HISTSIZE=10000
+SAVEHIST=50000
+
+setopt inc_append_history
+
+# NOTE: FZF
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_ALT_V_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% "
+
+# zoxide (called from ~/scripts/)
+alias nzo="~/scripts/zoxide_openfiles_nvim.sh"
+
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+
+[ -f "/home/berserkarc/.ghcup/env" ] && . "/home/berserkarc/.ghcup/env" # ghcup-env
+
+
+# Enable Zsh autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Enable Zsh syntax highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Optional: Make suggestions appear in gray
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+
+
+# opens documentation throw fzf (eg: git, zsh etc.)
+alias fman="compgen -c | fzf | xargs man"
+
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/share/nvm/init-nvm.sh" ] && . "/usr/share/nvm/init-nvm.sh"
+

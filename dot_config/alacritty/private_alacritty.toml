@@ -1,0 +1,43 @@
+[font]
+size = 18.0
+
+[font.bold]
+family = "Mx437 IBM Model3x Alt2"
+style = "Bold"
+
+[font.normal]
+family = "Mx437 IBM Model3x Alt2"
+style = "Regular"
+
+
+[colors]
+  [colors.primary]
+  background = "#000000" # Solid black background
+  foreground = "#00FF00" # Much brighter green for high contrast (classic "phosphor" green)
+  # For high-contrast AMBER, use: foreground = "#FFBF00"
+
+  # Optional: for a very subtle, almost unnoticeable scanline effect with full black bg
+  # background_opacity = 0.99
+
+  # Normal (ANSI 0-7) colors - These are the standard 8 colors, made more distinct
+  [colors.normal]
+  black = "#000000"   # Black
+  red = "#CC3333"     # More vibrant red
+  green = "#00DD00"   # Slightly muted but still bright green
+  yellow = "#CCCC00"  # More vibrant yellow
+  blue = "#3333CC"    # More vibrant blue
+  magenta = "#CC33CC" # More vibrant magenta
+  cyan = "#00CCCC"    # More vibrant cyan
+  white = "#BBBBBB"   # Brighter grey for standard white
+
+  # Bright (ANSI 8-15) colors - These will be very vibrant and distinct
+  [colors.bright]
+  black = "#444444"   # Dark grey for bright black (still distinct from true black)
+  red = "#FF0000"     # Pure, vibrant Red
+  green = "#00FF00"   # Pure, vibrant Green (same as primary foreground for maximum impact)
+  yellow = "#FFFF00"  # Pure, vibrant Yellow
+  blue = "#0000FF"    # Pure, vibrant Blue
+  magenta = "#FF00FF" # Pure, vibrant Magenta
+  cyan = "#00FFFF"    # Pure, vibrant Cyan
+  white = "#FFFFFF"   # Pure White (maximum contrast)
+
