@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "[chezmoi] Installing Nerd Fonts..."
+
+# Create fonts directory
+mkdir -p ~/.local/share/fonts
+
+# Download JetBrains Mono Nerd Font (Regular)
+curl -fLo ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf \
+  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Regular/JetBrainsMonoNerdFont-Regular.ttf
+
+# (Optional) Download Bold, Italic, etc.
+curl -fLo ~/.local/share/fonts/JetBrainsMonoNerdFont-Bold.ttf \
+  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Bold/JetBrainsMonoNerdFont-Bold.ttf
+
+# Rebuild font cache
+fc-cache -fv
+
+echo "[chezmoi] JetBrains Mono Nerd Font installed."
+
